@@ -3,7 +3,7 @@
 </p>
 
 <h1>Configuring Users for Active Directory</h1>
-In this tutorial, we will go over how to set the Windows Server as the Domain Controller, create Administrator Account, create users and add them to Active Directory.<br />
+In this tutorial, we will go over how to set the Windows Server as the Domain Controller, create Administrator Account, and add them to Active Directory.<br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -121,13 +121,13 @@ Right click mydomain.com-select New-select Organizational Unit.
 <p>
 <img src="https://github.com/user-attachments/assets/39bb681e-51d5-44e6-8d6a-a56c3dffcbb8" height="50%" width="50%"/>
 
-Label the new OU-_ADMINS.
+Label the new OU- _ADMINS.
 </p>
 
 <p>
 <img src="https://github.com/user-attachments/assets/c408fdb8-f5a6-49da-89f6-c24f79381ce2" height="50%" width="50%"/>
 
-Through the same process, create an OU for _EMPLOYEES as well.(This will be used in a preceeding lab.)
+Through the same process, create an OU for _EMPLOYEES as well.(This will be used in a preceeding lab).
 </p>
 
 <h2>Add a user to _ADMINS OU</h2>
@@ -138,9 +138,86 @@ Select the _ADMINS OU. Right click in the empty field to the right. Select New. 
 </p>
 
 <p>
-<img src="https://github.com/user-attachments/assets/3ea3c760-0513-4228-9bd0-2ca098527762" height="50%" width="50%"/>
+<img src="https://github.com/user-attachments/assets/857b9bfe-062e-4e99-a2fc-9cbd98b861a3" height="50%" width="50%"/>
 
-Select the _ADMINS OU. Right click in the empty field to the right. Select New. Select User.
+Fill in the user information. Select Next.
 </p>
+
+<p>
+<img src="https://github.com/user-attachments/assets/857b9bfe-062e-4e99-a2fc-9cbd98b861a3" height="50%" width="50%"/>
+
+Add a Password. Select Next.
+</p>
+
+<p>
+<img src="https://github.com/user-attachments/assets/14ad4895-d65e-4b27-829d-d8307368716c" height="50%" width="50%"/>
+
+Review and Finish.
+</p>
+
+<p>
+<img src="https://github.com/user-attachments/assets/0dc82434-5f4e-4df4-b5fe-bba2a6726877" height="50%" width="50%"/>
+
+User should now be listed under _ADMINS.
+</p>
+
+<h2>Make the user an Admin.</h2>
+
+<p>
+<img src="https://github.com/user-attachments/assets/4e2c2504-29d0-4648-bd6f-32bc14e371a3" height="50%" width="50%"/>
+
+Right click Jake Lawson. Select Properties.
+</p>
+
+<p>
+<img src="https://github.com/user-attachments/assets/c186f1ee-85b4-47ea-8314-faf9eef3d7c6" height="50%" width="50%"/>
+
+Select "Member Of". Select "Add". Enter "domain admins". Select "Check Names". Select "OK".
+</p>
+
+<p>
+<img src="https://github.com/user-attachments/assets/4790f783-b43b-4ea2-a47e-da163c34c9c4" height="50%" width="50%"/>
+
+Select "Apply". Select "OK".
+</p>
+
+This account is now an Admin User. Log out of dc-1. We will use the new admin login to complete this lab.
+
+<p>
+<img src="https://github.com/user-attachments/assets/64f1815c-5008-4944-ab03-b9e0f4145284" height="50%" width="50%"/>
+ 
+RDP into dc-1 as the new Admin.
+</p>
+
+<h2>Add client-1 to the domain(mydomain.com)</h2>
+
+<p>
+<img src="https://github.com/user-attachments/assets/194c7e04-e2c4-4622-bb35-90f37d22120e" height="50%" width="50%"/>
+ 
+RDP into client-1. Select System-Rename this PC(advanced)-Change-Select Domain-add "mydomain.com". Select "OK".
+</p>
+
+<p>
+<img src="https://github.com/user-attachments/assets/b5e2739c-f783-4942-883f-03594afff19a" height="50%" width="50%"/>
+ 
+In a previous [lab](https://github.com/gustygreen/Active-Directory.git) we set the DC with a DNS server so we have to give permission to make the Domain change.
+</p>
+
+<p>
+<img src="https://github.com/user-attachments/assets/061a47ae-27a3-42a5-846e-9b3573b77a1a" height="50%" width="50%"/>
+ 
+If successfully done, there will be a welcome to the Domain message and the option to restart. Restart to allow the change to take affect.
+</p>
+
+<p>
+<img src="https://github.com/user-attachments/assets/d5ef6af0-e74f-4f92-8931-451af9a40480" height="50%" width="50%"/>
+ 
+RDP to dc-1 as the admin. Go to Active Directory Users and Computers. Select mydomain.com-Computers and you will see client-1 in the domain. 
+You can then select it to look at and manage general information for the computer.
+</p>
+
+
+
+
 
 
