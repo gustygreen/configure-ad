@@ -10,7 +10,7 @@ In this tutorial, we will go over how to set the Windows Server as the Domain Co
 
 - Microsoft Azure (Virtual Machines/Compute)
 - Virtual Network inside Azure Resource Group
-- Powershell
+- RDP
 
 <h2>Operating Systems Used </h2>
 
